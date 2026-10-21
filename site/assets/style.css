@@ -15,7 +15,7 @@ h2{font-weight:400;font-size:clamp(30px,3.5vw,44px);letter-spacing:-1.4px;line-h
 h3{font-size:20px;font-weight:700;line-height:1.4}
 p{max-width:64ch}
 .container{width:min(1160px,calc(100% - 96px));margin-inline:auto}
-.skip-link{position:absolute;top:12px;left:16px;z-index:10;transform:translateY(-200%);background:var(--navy);color:white;padding:12px 20px}
+.skip-link{position:fixed;top:12px;left:16px;z-index:10;transform:translateY(-200%);background:var(--navy);color:white;padding:12px 20px}
 .skip-link:focus{transform:translateY(0)}
 .site-header{border-bottom:1px solid var(--line)}
 .header-inner{min-height:104px;display:flex;align-items:center;justify-content:space-between;gap:36px}
