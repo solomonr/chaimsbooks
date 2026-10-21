@@ -12,7 +12,20 @@ Do not remove forwarding, add/change/delete DNS records, change nameservers, or 
 4. In Netlify, add `chaimsbooks.com` to the project without using automatic DNS setup or changing nameservers. Retain `www.chaimsbooks.com` as an alias and use `chaimsbooks.com` as primary, matching the canonical metadata. Review the exact DNS instructions shown for this site. Domain assignment in Netlify alone does not switch live traffic, but it may affect the temporary URL's redirects, so finish preview testing first.
 5. Prepare an exact before/after record list and rollback plan, then request the owner's explicit approval immediately before the GoDaddy changes.
 
-## Expected web-only changes (reconfirm against Netlify)
+## Exact prepared web-only changes (21 October 2026)
+
+Preview verified: https://chaimsbooks.netlify.app/. Netlify project: `chaimsbooks`; primary domain: `chaimsbooks.com`; alias: `www.chaimsbooks.com`. The owner's explicit launch approval is still pending.
+
+| Setting | Before | After approval |
+| --- | --- | --- |
+| GoDaddy domain forwarding | Permanent 301 to `https://www.thebarmitzvahlist.com` | Remove forwarding |
+| A `@` | `15.197.225.128` and `3.33.251.168` | One A record: `75.2.60.5` |
+| CNAME `www` | `chaimsbooks.com.` | `chaimsbooks.netlify.app.` |
+| Other 15 records and nameservers | Existing configuration backed up locally | Preserve |
+
+Retain the existing one-hour TTL where configurable. The A and CNAME targets were read directly from this project's Netlify domain instructions. Netlify's apex A fallback is used to keep GoDaddy DNS and the canonical apex domain; Netlify recommends www as primary for fuller CDN benefits. The static site is small, and the apex configuration is supported.
+
+Search Console ownership has already been automatically verified for the Domain property using existing DNS. No extra verification TXT is required.
 
 - Remove the existing permanent forwarding to `https://www.thebarmitzvahlist.com` only after approval.
 - Replace the forwarding service's two apex A records, observed on 21 October 2026 as `3.33.251.168` and `15.197.225.128`, with the apex target specified in this project's Netlify domain instructions. Do not guess from old documentation or another project.

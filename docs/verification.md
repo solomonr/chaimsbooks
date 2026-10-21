@@ -17,12 +17,21 @@ This record distinguishes completed tests from launch tasks. It is not a claim t
 
 Screenshots are retained locally in ignored `qa/`, not published as website assets. Public source contains no credentials. Neither the production site nor preview requires any runtime JavaScript.
 
+## Completed on Netlify
+
+- The owner approved Netlify's GitHub connection with repository scope limited to `solomonr/chaimsbooks`. The actual account billing screen confirmed the Free plan; no paid services were enabled.
+- Published commit `fe93ac8ece78a6d0c1a21097b1d82d348a33491d`. Netlify deploy `6ad8dfbe5a779ff16e6a307a` completed successfully in 34 seconds on 21 October 2026. Project ID: `540c965a-e830-42c2-8e81-1d208029a465`.
+- Renamed the project to `chaimsbooks`. Public URL: https://chaimsbooks.netlify.app/. The initial private production setting returned HTTP 401; it was changed to Public and unauthenticated access was then verified. Deploy Previews remain Private.
+- Verified HTTPS with normal certificate validation, HTTP 200 homepage/CSS/fonts/images/robots, working security headers and `X-Robots-Tag: noindex, follow`. The homepage also contains the noindex meta tag. A nonexistent path returned the branded page with HTTP 404. The preview sitemap is intentionally absent (404).
+- Visually checked the deployed desktop 1440px and mobile 390px layouts; no horizontal overflow, both images loaded, fonts loaded and browser error/warning log was empty. Screenshots and HTTP results are in ignored `qa/`.
+- GitHub checks passed for the deployed commit: https://github.com/solomonr/chaimsbooks/actions/runs/39629453365
+- Assigned `chaimsbooks.com` as Netlify's primary domain, with `www.chaimsbooks.com` redirecting to it. These assignments do not alter GoDaddy DNS. Both are pending DNS verification, and the custom-domain certificate is not yet provisioned.
+- Read Netlify's exact DNS instructions: apex A `75.2.60.5`; www CNAME `chaimsbooks.netlify.app`. No automated DNS connection or nameserver change was used.
+- Saved all 18 GoDaddy zone records, authoritative DNS query results, and existing permanent (301) forwarding to `https://www.thebarmitzvahlist.com` under ignored `private/dns-backup-2026-10-21/`.
+- Added the `chaimsbooks.com` domain property in the signed-in Search Console account. Google displayed **Ownership auto verified**, method **Domain name provider**, using existing DNS. The property overview is accessible and currently says data is processing. No DNS verification record was added or changed.
+
 ## Outstanding at this checkpoint
 
-- Netlify GitHub connection requires the owner's authorization. The requested repository scope is only `solomonr/chaimsbooks`.
-- Netlify temporary URL, deployed headers, real 404 response and TLS are not yet verified.
-- No changes to GoDaddy forwarding/DNS are approved. A full zone/forwarding backup and exact proposed record changes must precede the approval request.
-- Custom-domain HTTPS, both www/apex behavior and production crawlability are not yet verified.
-- Search Console access/property status, sitemap submission and indexing request are not yet completed. Existing Google verification TXT records do not by themselves prove access or indexing.
-
-Update this record with actual hosting and launch results when those stages are completed.
+- Explicit owner approval for the exact GoDaddy forwarding/A/CNAME changes is still required. No registrar changes have been made.
+- After approval: publish the indexable production build, switch only web records, provision and verify HTTPS for apex/www, test redirects and compare preserved email records.
+- Sitemap submission and indexing request must wait until the custom domain serves the new indexable site over verified HTTPS. Ownership verification is not proof of indexing or ranking.

@@ -4,7 +4,7 @@ A lightweight, responsive website introducing **Chaims Books** and its associati
 
 ## Project status
 
-Prepared for **Netlify Free hosting with source in GitHub**. GoDaddy remains the registrar and DNS provider. The custom domain launch requires the owner's explicit approval immediately before forwarding or DNS changes. A successful build does not mean that the site is deployed or that Google has indexed it. See `docs/verification.md` for the recorded verification status when available.
+Published and tested on **Netlify Free**, with source in [GitHub](https://github.com/solomonr/chaimsbooks). The public preview is **https://chaimsbooks.netlify.app/** and deliberately remains noindex pending launch approval. GoDaddy remains the registrar and DNS provider; its live forwarding and DNS have not been changed. Search Console verified the `chaimsbooks.com` domain property using an existing DNS record. The custom-domain launch requires the owner's explicit approval immediately before forwarding or DNS changes. See `docs/verification.md` for the recorded results and remaining steps.
 
 The user selected Netlify because [GitHub Pages restricts online business/commercial transaction hosting](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits). GitHub Pages is not the deployment target. Netlify's [Free plan](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/) currently includes 300 monthly credits, with a hard limit and no automatic recharge. Traffic and production deploys consume credits; exhaustion can pause the site. Check the actual account plan before publishing and do not enable paid services without approval.
 
@@ -40,13 +40,13 @@ Open `http://127.0.0.1:4173/`. Stop the server with Ctrl+C. Python's development
 
 ## Netlify deployment
 
-Import this repository into the owner's Netlify Free account. Use branch `main`, build command `python3 scripts/build.py`, and publish directory `dist`. These are configured in `netlify.toml`. Do not add a database, functions, paid analytics, forms or AI features.
+The repository is connected to [Netlify project chaimsbooks](https://app.netlify.com/projects/chaimsbooks/overview). It uses branch `main`, build command `python3 scripts/build.py`, and publish directory `dist`, as configured in `netlify.toml`. Production visibility is Public; Deploy Preview visibility is Private. Do not add a database, functions, paid analytics, forms or AI features.
 
 **Initially leave `SITE_PRODUCTION` unset.** This produces a preview with `noindex, follow` in the HTML and an `X-Robots-Tag` header, while allowing crawlers to read those directives. It omits the sitemap. Canonical URLs still identify the intended final domain. Preview is public, not password protected.
 
 After the temporary Netlify URL is tested and explicit domain-change approval is obtained, follow `docs/launch.md`. Set `SITE_PRODUCTION=true` only for the production deployment context, then rebuild. Branch and pull-request previews retain `SITE_PRODUCTION=false`. The production homepage is indexable and serves the sitemap. Keep the 404 page noindex.
 
-Source pushes on `main` may trigger a production deployment and use Netlify credits once Git integration is enabled. Group small changes, check them locally, and use previews before publishing. No GitHub-to-Netlify secrets are stored in this repository.
+Source pushes on `main` trigger production deployments and use Netlify credits. Group small changes, check them locally, and use previews before publishing. For documentation-only commits, Netlify supports `[skip netlify]` in the commit message to avoid an unnecessary deployment ([documentation](https://docs.netlify.com/deploy/manage-deploys/manage-deploys-overview/)). No GitHub-to-Netlify secrets are stored in this repository.
 
 ## Editing and maintenance
 
