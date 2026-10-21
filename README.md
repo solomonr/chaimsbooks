@@ -47,7 +47,7 @@ The repository is connected to [Netlify project chaimsbooks](https://app.netlify
 
 After the temporary Netlify URL is tested and explicit domain-change approval is obtained, follow `docs/launch.md`. Set `SITE_PRODUCTION=true` only for the production deployment context, then rebuild. Branch and pull-request previews retain `SITE_PRODUCTION=false`. The production homepage is indexable and serves the sitemap. Keep the 404 page noindex.
 
-Source pushes on `main` trigger production deployments and use Netlify credits. Group small changes, check them locally, and use previews before publishing. For documentation-only commits, Netlify supports `[skip netlify]` in the commit message to avoid an unnecessary deployment ([documentation](https://docs.netlify.com/deploy/manage-deploys/manage-deploys-overview/)). No GitHub-to-Netlify secrets are stored in this repository.
+Netlify shows auto publishing enabled for `main`, but an automatic deployment was not observed for the matching-homepage push. That revision was successfully published through **Deploys → Trigger deploy → Deploy project**, which fetched the latest GitHub commit. Check the deployment status after future pushes and use that command if needed. Production deployments use Netlify credits. Group small changes, check them locally, and use previews before publishing. For documentation-only commits, Netlify supports `[skip netlify]` in the commit message to avoid an unnecessary deployment ([documentation](https://docs.netlify.com/deploy/manage-deploys/manage-deploys-overview/)). No GitHub-to-Netlify secrets are stored in this repository.
 
 ## Editing and maintenance
 

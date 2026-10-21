@@ -17,7 +17,7 @@ This record distinguishes completed tests from launch tasks. It is not a claim t
 
 Screenshots are retained locally in ignored `qa/`, not published as website assets. Public source contains no credentials. Neither the production site nor preview requires any runtime JavaScript.
 
-## Completed on Netlify
+## Initial Netlify publication
 
 - The owner approved Netlify's GitHub connection with repository scope limited to `solomonr/chaimsbooks`. The actual account billing screen confirmed the Free plan; no paid services were enabled.
 - Published commit `fe93ac8ece78a6d0c1a21097b1d82d348a33491d`. Netlify deploy `6ad8dfbe5a779ff16e6a307a` completed successfully in 34 seconds on 21 October 2026. Project ID: `540c965a-e830-42c2-8e81-1d208029a465`.
@@ -45,3 +45,13 @@ The owner requested that the page look identical to thebarmitzvahlist.com and in
 - Checks at 320, 390, 768, 1024 and 1440 CSS pixels found no horizontal overflow. The logo and all fonts loaded, and the local browser warning/error log was empty.
 - Kept accessible navigation names, focus styles, a skip link, a main landmark and one H1. Reference colours are intentionally retained; earlier distinct-design contrast numbers do not describe this revision.
 - Default deployment remains noindex. GoDaddy forwarding, DNS and email settings remain unchanged; the owner requested to review this revised preview before approving launch.
+
+### Revised preview publication
+
+- Published source commit `ae1fd13e46cb7bbb585b936acc3af4da0125a02a` in Netlify deploy `6ad8e3214bc596d23afebce2`. The dashboard visibly confirmed successful publication of this exact commit.
+- GitHub checks passed: https://github.com/solomonr/chaimsbooks/actions/runs/39631705756
+- Auto publishing was shown as enabled, but no new automatic build appeared after the push. Used Netlify's existing **Trigger deploy → Deploy project** control, which fetched and published the correct GitHub commit. Automatic push-triggered build behavior remains unverified.
+- Verified https://chaimsbooks.netlify.app/ returns the revised homepage with valid HTTPS, HTTP 200 and noindex. CSS, fonts, favicon and logo returned HTTP 200 and byte-for-byte matched the tested local assets. The branded error page returned HTTP 404.
+- Reopened the public preview and verified the logo/fonts loaded, the matching desktop/mobile layout, and the Chaims Books search description. Public screenshot: ignored `qa/matching-public-desktop.png`; mobile: `qa/matching-public-mobile.png`. Preview assets total about 304 KB uncompressed.
+- Verified the newly added basket destination returns HTTP 200 over HTTPS. Keyboard skip-link activation focuses `main`. All five footer links have accessible names.
+- No domain switch is approved. The owner requested to see the corrected preview before deciding.
