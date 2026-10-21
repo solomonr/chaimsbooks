@@ -1,0 +1,11 @@
+.DS_Store
+dist/
+.netlify/
+node_modules/
+.env
+.env.*
+!\.env.example
+private/
+qa/
+__pycache__/
+*.pyc
