@@ -5,9 +5,9 @@
 [build.environment]
   PYTHON_VERSION = "3.13"
 
-# Explicitly enable only during the approved custom-domain launch:
-# SITE_PRODUCTION=true
-# Until then, every deployed page has noindex and the sitemap is omitted.
+# Custom-domain launch explicitly approved by the owner on 21 October 2026.
+[context.production.environment]
+  SITE_PRODUCTION = "true"
 
 [context.deploy-preview.environment]
   SITE_PRODUCTION = "false"
