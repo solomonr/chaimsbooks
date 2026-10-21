@@ -55,3 +55,7 @@ The owner requested that the page look identical to thebarmitzvahlist.com and in
 - Reopened the public preview and verified the logo/fonts loaded, the matching desktop/mobile layout, and the Chaims Books search description. Public screenshot: ignored `qa/matching-public-desktop.png`; mobile: `qa/matching-public-mobile.png`. Preview assets total about 304 KB uncompressed.
 - Verified the newly added basket destination returns HTTP 200 over HTTPS. Keyboard skip-link activation focuses `main`. All five footer links have accessible names.
 - No domain switch is approved. The owner requested to see the corrected preview before deciding.
+
+## Visible association line — 21 October 2026
+
+After approving the matching preview design, the owner requested a visible Chaims Books mention. Added “In association with Chaims Books” directly below the welcome heading, with the existing search/social descriptions and organization data retained. Design approval does not authorize the pending GoDaddy domain switch.

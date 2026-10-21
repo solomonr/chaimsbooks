@@ -72,7 +72,7 @@ There are no runtime content dependencies. A working site, sitemap submission or
 
 ## Branding and asset provenance
 
-Reference inspected on 21 October 2026: [The Bar Mitzvah List](https://thebarmitzvahlist.com/). The current design reproduces its logo, Calibri typography, centred copy, gold pill buttons, responsive spacing and five fixed footer icons. The visible copy remains the same; Chaims Books is included in the search/social descriptions and organization data. Shopping, account and gift-list links lead to the existing service, including its basket.
+Reference inspected on 21 October 2026: [The Bar Mitzvah List](https://thebarmitzvahlist.com/). The current design reproduces its logo, Calibri typography, centred copy, gold pill buttons, responsive spacing and five fixed footer icons. The visible welcome heading is followed by “In association with Chaims Books”, as requested after preview approval. Chaims Books is also included in the search/social descriptions and organization data. Shopping, account and gift-list links lead to the existing service, including its basket.
 
 The association logo, favicon and font files are sourced from the owner's existing website under the matching-homepage instruction. The Calibri font is unchanged. Navigation icon fonts are subset to the required symbols. Source URLs and embedded font notices are in `site/assets/ASSET-NOTICES.txt`; Font Awesome's OFL is included separately. Brand artwork and proprietary fonts retain their existing rights; this repository grants no new licence to those assets.
 

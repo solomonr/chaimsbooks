@@ -13,6 +13,7 @@ main { margin: 0 0 80px; display: inline-block; width: 100%; }
 .box-item { text-align: center; }
 .box-image img { max-width: 80%; }
 .box-title h1 { color: #000; font-size: 28px; line-height: 32px; font-weight: 500; }
+.association { margin-top: 8px; color: #27215e; font-size: 16px; line-height: 20px; }
 .text-content { font-size: 14px; font-weight: 400; line-height: 18px; margin: 25px auto; color: #454545; }
 .read-more a { display: block; background: #eaa451; color: #fff; padding: 17px; border-radius: 50px; width: 80%; margin: 0 auto 20px; border: 1px solid #eaa451; font-weight: 500; font-size: 16px; }
 .read-more a:hover { border-color: #eaa451; background: transparent; color: #eaa451; }
