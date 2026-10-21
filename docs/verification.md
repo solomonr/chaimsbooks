@@ -1,6 +1,6 @@
 # Verification record — 21 October 2026
 
-This record distinguishes completed tests from launch tasks. It is not a claim that the custom domain is live.
+This record distinguishes historical checkpoints from the latest launch results at the end of the file.
 
 ## Initial design checks (superseded visually by the revision below)
 
@@ -30,7 +30,7 @@ Screenshots are retained locally in ignored `qa/`, not published as website asse
 - Saved all 18 GoDaddy zone records, authoritative DNS query results, and existing permanent (301) forwarding to `https://www.thebarmitzvahlist.com` under ignored `private/dns-backup-2026-10-21/`.
 - Added the `chaimsbooks.com` domain property in the signed-in Search Console account. Google displayed **Ownership auto verified**, method **Domain name provider**, using existing DNS. The property overview is accessible and currently says data is processing. No DNS verification record was added or changed.
 
-## Outstanding at this checkpoint
+## Outstanding at the initial checkpoint (historical)
 
 - Explicit owner approval for the exact GoDaddy forwarding/A/CNAME changes is still required. No registrar changes have been made.
 - After approval: publish the indexable production build, switch only web records, provision and verify HTTPS for apex/www, test redirects and compare preserved email records.
@@ -59,3 +59,25 @@ The owner requested that the page look identical to thebarmitzvahlist.com and in
 ## Visible association line — 21 October 2026
 
 After approving the matching preview design, the owner requested a visible Chaims Books mention. Added “In association with Chaims Books” directly below the welcome heading, with the existing search/social descriptions and organization data retained. Design approval does not authorize the pending GoDaddy domain switch.
+
+## Approved custom-domain launch — 21 October 2026
+
+- The owner explicitly approved the final live switch: “Yes, launch at chaimsbooks.com”.
+- Production indexing is enabled only in Netlify's production context through `netlify.toml`; branch/deploy preview contexts remain noindex.
+- Source commit `6932de16657ce906a7b0e34a0ef0ca41a039aab0` was published in Netlify deploy `6ad8e7b05a6f0352a7f5bbd5`, with dashboard confirmation. Build and publication completed in 9 seconds. GitHub checks passed: https://github.com/solomonr/chaimsbooks/actions/runs/39634518231
+- Removed GoDaddy's old permanent forwarding. GoDaddy replaced its managed forwarding addresses with a parked record; edited that record to the approved apex A `75.2.60.5`, retaining a one-hour TTL. Changed only the `www` CNAME to `chaimsbooks.netlify.app` with a one-hour TTL.
+- The resulting zone has 17 records. Compared every backed-up non-web record on both `ns05.domaincontrol.com` and `ns06.domaincontrol.com`: Google MX, SPF, DKIM, DMARC, verification TXT, `_domainconnect`, nameservers and other unchanged sets matched. The SOA serial changed automatically. No email delivery test was performed.
+- Cloudflare `1.1.1.1` and Google `8.8.8.8` both returned the new apex A and www CNAME. Netlify's DNS verification succeeded. HTTP served the approved homepage with the visible association line.
+- Let’s Encrypt issued a certificate covering both apex and www, expiring 19 January 2027. Normal certificate validation succeeded on both hosts. The homepage returns HTTPS 200; HTTP apex redirects 301 to HTTPS apex; HTTP www redirects 301 to HTTPS www, then 301 to HTTPS apex, without a loop.
+- All published static files byte-match the tested `dist` build. `/robots.txt` and `/sitemap.xml` return 200; canonical metadata identifies the live apex; the homepage has `index, follow` and no HTTP noindex header. A nonexistent path returns the branded HTTP 404 page. Security headers are present.
+- Live desktop 1440 × 1000 and mobile 390 × 844 checks passed: no horizontal overflow, logo and fonts loaded, visible Chaims Books association line, and empty browser warning/error log. Screenshots: ignored `qa/live-desktop.png` and `qa/live-mobile.png`. HTTP and certificate evidence: `qa/live-verification.json`.
+- Search Console live homepage test at 17:33 London time reported “URL is available to Google”, “Page can be indexed”, crawl allowed **Yes**, page fetch **Successful**, indexing allowed **Yes**, and user-declared canonical `https://chaimsbooks.com/`.
+- Requested indexing for the homepage; Google visibly confirmed “Indexing requested” and addition to its priority crawl queue. This is not a claim that Google has indexed or ranked the site.
+- Submitted `https://chaimsbooks.com/sitemap.xml`; Google confirmed submission, but the Sitemaps table reported “Couldn’t fetch”. Retried submission once after the successful live homepage test; the table still showed that status. The file returns HTTPS 200 and validates as XML. Google’s live sitemap URL test at 17:35 London time returned “URL is available to Google”, crawl allowed **Yes**, and page fetch **Successful**. No indexing request was made for the XML file. The sitemap report has not yet confirmed successful processing; recheck that report later. The successful live fetch is evidence of accessibility, not completed sitemap processing.
+
+
+## Remaining external follow-up
+
+- Recheck the Sitemaps report for successful processing of `https://chaimsbooks.com/sitemap.xml`, then the homepage’s indexing and Performance reports. Google’s processing schedule and search ranking are outside the site’s control; no ranking or completed indexing is claimed.
+- DNS caches outside the resolvers checked may take time to expire. Email DNS was preserved, but the owner can perform a normal inbound/outbound mail smoke test to verify delivery separately.
+- No recurring monitoring, paid plan, analytics service or notification automation was created.

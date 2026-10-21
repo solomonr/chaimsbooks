@@ -7,16 +7,16 @@ Do not remove forwarding, add/change/delete DNS records, change nameservers, or 
 ## Before requesting approval
 
 1. Complete deployment in the owner's Netlify Free account and record the actual temporary URL and deploy identifier.
-2. Verify its HTTPS certificate, homepage, CSS, fonts, images, external links, FAQ, mobile layout and real 404 response. Verify the preview is noindex.
+2. Verify its HTTPS certificate, homepage, CSS, fonts, images, external links, mobile layout and real 404 response. Verify the preview is noindex.
 3. Record the current full GoDaddy zone and forwarding configuration in a local **ignored** `private/` folder. Public DNS queries alone cannot discover every DKIM selector or custom subdomain. Compare the complete zone in GoDaddy.
 4. In Netlify, add `chaimsbooks.com` to the project without using automatic DNS setup or changing nameservers. Retain `www.chaimsbooks.com` as an alias and use `chaimsbooks.com` as primary, matching the canonical metadata. Review the exact DNS instructions shown for this site. Domain assignment in Netlify alone does not switch live traffic, but it may affect the temporary URL's redirects, so finish preview testing first.
 5. Prepare an exact before/after record list and rollback plan, then request the owner's explicit approval immediately before the GoDaddy changes.
 
-## Exact prepared web-only changes (21 October 2026)
+## Approved web-only changes (21 October 2026)
 
-Preview verified: https://chaimsbooks.netlify.app/. Netlify project: `chaimsbooks`; primary domain: `chaimsbooks.com`; alias: `www.chaimsbooks.com`. The owner's explicit launch approval is still pending.
+Preview verified: https://chaimsbooks.netlify.app/. Netlify project: `chaimsbooks`; primary domain: `chaimsbooks.com`; alias: `www.chaimsbooks.com`. The owner explicitly approved the final live switch on 21 October 2026: ‘Yes, launch at chaimsbooks.com’. The agreed forwarding removal and A/CNAME changes have been applied; email records and GoDaddy nameservers were compared against the backup and preserved. See `verification.md` for HTTPS and Search Console results.
 
-| Setting | Before | After approval |
+| Setting | Before | Approved target |
 | --- | --- | --- |
 | GoDaddy domain forwarding | Permanent 301 to `https://www.thebarmitzvahlist.com` | Remove forwarding |
 | A `@` | `15.197.225.128` and `3.33.251.168` | One A record: `75.2.60.5` |
