@@ -1,4 +1,6 @@
-Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans)
+Copyright Dave Gandy 2016. All rights reserved.
+Font Awesome 4.7.0 — http://fontawesome.io/license/
+
 
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007

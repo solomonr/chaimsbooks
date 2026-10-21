@@ -2,7 +2,7 @@
 
 This record distinguishes completed tests from launch tasks. It is not a claim that the custom domain is live.
 
-## Completed before hosting
+## Initial design checks (superseded visually by the revision below)
 
 - Inspected the reference homepage and its actual CSS and logo. Verified the four linked external destinations (homepage, gift-list directory, account login and contact page) each returned HTTP 200 over HTTPS.
 - Verified the existing `https://chaimsbooks.com/` response: HTTP 301 to `https://www.thebarmitzvahlist.com`. No forwarding or DNS changes were made.
@@ -35,3 +35,13 @@ Screenshots are retained locally in ignored `qa/`, not published as website asse
 - Explicit owner approval for the exact GoDaddy forwarding/A/CNAME changes is still required. No registrar changes have been made.
 - After approval: publish the indexable production build, switch only web records, provision and verify HTTPS for apex/www, test redirects and compare preserved email records.
 - Sitemap submission and indexing request must wait until the custom domain serves the new indexable site over verified HTTPS. Ownership verification is not proof of indexing or ranking.
+
+## Reference-matching revision — 21 October 2026
+
+The owner requested that the page look identical to thebarmitzvahlist.com and include Chaims Books in the description. This replaces the earlier distinct Chaims Books layout. The visible homepage wording, title, logo, Calibri typeface, gold buttons and fixed icon navigation now match the reference. The search description ends “In association with Chaims Books.” Basket, login and gift-list navigation opens the original service.
+
+- Desktop 1440 × 1000 and mobile 390 × 844 were compared against the live reference. Logo, heading, description and button positions and sizes matched the measured reference geometry (logo width differs by less than 0.01 CSS pixels).
+- Captured screenshot comparison at an 8/255 per-channel tolerance found 0.029% of desktop pixels and 0.160% of mobile pixels different, mostly small icon/rendering details. This is a same-browser snapshot comparison, not a guarantee for every platform.
+- Checks at 320, 390, 768, 1024 and 1440 CSS pixels found no horizontal overflow. The logo and all fonts loaded, and the local browser warning/error log was empty.
+- Kept accessible navigation names, focus styles, a skip link, a main landmark and one H1. Reference colours are intentionally retained; earlier distinct-design contrast numbers do not describe this revision.
+- Default deployment remains noindex. GoDaddy forwarding, DNS and email settings remain unchanged; the owner requested to review this revised preview before approving launch.

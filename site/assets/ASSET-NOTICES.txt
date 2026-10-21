@@ -1,0 +1,27 @@
+Asset provenance and notices
+
+These assets are reused from the business owner’s existing website for its requested matching homepage. No open-source rights are granted to brand artwork or proprietary fonts.
+
+https://thebarmitzvahlist.com/css/fonts/Calibri.woff
+© 2006 Microsoft Corporation. All Rights Reserved.
+Calibri
+Calibri is either a registered trademark or a trademark of Microsoft Corporation in the United States and/or other countries.
+Microsoft Corporation
+Luc(as) de Groot
+You may use this font as permitted by the EULA for the product in which this font is included to display and print content. You may only (i) embed this font in content as permitted by the embedding restrictions included in this font; and (ii) temporarily download this font to a printer or other output device to help print content.
+http://www.microsoft.com/typography/fonts/default.aspx
+
+https://thebarmitzvahlist.com/css/fonts/flaticon.woff2
+uicons-regular-rounded
+
+https://thebarmitzvahlist.com/css/fonts/fontawesome-webfont.woff2?v=4.7.0
+Copyright Dave Gandy 2016. All rights reserved.
+FontAwesome
+Please refer to the Copyright section for the font trademark attribution notices.
+Fort Awesome
+Dave Gandy
+http://fontawesome.io/license/
+
+Calibri is copied unchanged. The navigation icon fonts are subsets of the original font files, retaining their name and licence metadata.
+Logo: https://thebarmitzvahlist.com/img/site/site__site-ll-2__q-90.png?m=1791926878
+Favicon: https://thebarmitzvahlist.com/images/favicon.png

@@ -1,6 +1,6 @@
 # Chaims Books
 
-A lightweight, responsive website introducing **Chaims Books** and its association with [The Bar Mitzvah List](https://thebarmitzvahlist.com/). HTML and CSS only; there is no application JavaScript, database, checkout, analytics or form processing. The gift-list service remains on its existing website.
+A lightweight, responsive homepage matching [The Bar Mitzvah List](https://thebarmitzvahlist.com/), with **Chaims Books** included in its search and social descriptions. The owner requested this exact visual direction after reviewing the initial distinct design. HTML and CSS only; there is no application JavaScript, database, checkout, analytics or form processing. The gift-list service remains on its existing website.
 
 ## Project status
 
@@ -14,9 +14,10 @@ The user selected Netlify because [GitHub Pages restricts online business/commer
 | --- | --- |
 | `site/index.html` | Homepage, copy, links and SEO metadata |
 | `site/assets/style.css` | Responsive layout and colours |
-| `site/assets/books.svg` | Original decorative book illustration |
 | `site/assets/bar-mitzvah-list-logo.png` | Existing association logo, preserved without modification |
-| `site/assets/social-card.svg` and `.png` | Editable social-sharing artwork and raster export |
+| `site/assets/calibri.woff` | Original homepage typeface |
+| `site/assets/*icons.woff2` | Subsets of the original navigation icon fonts |
+| `site/assets/ASSET-NOTICES.txt` | Source asset and font notices |
 | `site/404.html` | Real 404 error page |
 | `site/robots.txt`, `site/sitemap.xml` | Production crawler configuration |
 | `site/_headers` | Netlify security headers |
@@ -52,7 +53,7 @@ Source pushes on `main` trigger production deployments and use Netlify credits. 
 
 Edit content in `site/index.html`. Keep the business name **Chaims Books** consistent. The legacy association logo contains its original spelling and remains unaltered. Avoid inventing an address, opening hours, company history, customer reviews or stock availability. No unconfirmed business details are included in structured data.
 
-Run the checks after edits and inspect desktop, tablet and mobile layouts. Confirm the FAQ opens with keyboard controls, focus outlines are visible, links work, and images load. The GitHub check workflow validates both production and preview builds.
+Run the checks after edits and inspect desktop, tablet and mobile layouts. Confirm focus outlines and the skip link work, every icon link has an accessible label, links work, and the logo and icon fonts load. The GitHub check workflow validates both production and preview builds.
 
 For a local production build:
 
@@ -61,16 +62,18 @@ SITE_PRODUCTION=true python3 scripts/build.py
 python3 scripts/check.py dist
 ```
 
-Regenerate PNG icons and the social image from the corresponding SVG files with an SVG-capable image renderer when those designs change. Preserve the 1200 × 630 social image dimensions. Font files are self-hosted and use `font-display: swap`.
+The original association logo is also the social-sharing image. The original favicon and Calibri font are preserved. Navigation fonts contain only the five required glyphs. Assets are self-hosted; the text font uses `font-display: swap`.
 
 ## SEO
 
-The source includes a unique title and description, one H1, semantic sections, canonical URL `https://chaimsbooks.com/`, Open Graph and Twitter metadata, favicon and touch icon, `Organization`, `WebSite` and `WebPage` JSON-LD, robots.txt and sitemap.xml. Organization schema is used instead of inventing the address required for a useful local store listing. No review or product schema is fabricated. The associated service is linked but is not marked `sameAs`, because it has a distinct role and name.
+The source retains the reference homepage title and a description ending “In association with Chaims Books.” It includes one H1, main/navigation landmarks, canonical URL `https://chaimsbooks.com/`, Open Graph and Twitter metadata, favicon and touch icon, `Organization`, `WebSite` and `WebPage` JSON-LD, robots.txt and sitemap.xml. Organization schema is used instead of inventing the address required for a useful local store listing. No review or product schema is fabricated. The associated service is linked but is not marked `sameAs`, because it has a distinct role and name.
 
 There are no runtime content dependencies. A working site, sitemap submission or indexing request does not guarantee indexing or rankings. Follow the Search Console procedure only after the live domain serves the indexable production version over HTTPS.
 
 ## Branding and asset provenance
 
-Reference inspected on 21 October 2026: [The Bar Mitzvah List](https://thebarmitzvahlist.com/). Reused its navy/blue identity, gold buttons, white space and Open Sans typography. The original full association logo came from `https://thebarmitzvahlist.com/img/site/site__site-ll-2__q-90.png?m=1791926878` and is used under the business owner's project instruction. Brand artwork remains the property of its owner; it is not granted an open-source licence by this repository.
+Reference inspected on 21 October 2026: [The Bar Mitzvah List](https://thebarmitzvahlist.com/). The current design reproduces its logo, Calibri typography, centred copy, gold pill buttons, responsive spacing and five fixed footer icons. The visible copy remains the same; Chaims Books is included in the search/social descriptions and organization data. Shopping, account and gift-list links lead to the existing service, including its basket.
 
-The book illustration, navigation symbol and social card are new decorative vector artwork, not photographs or depictions of specific stock. Open Sans is distributed under the included `site/assets/OFL-Open-Sans.txt` licence. No original site's executable scripts, analytics IDs, product catalogue or customer data were copied.
+The association logo, favicon and font files are sourced from the owner's existing website under the matching-homepage instruction. The Calibri font is unchanged. Navigation icon fonts are subset to the required symbols. Source URLs and embedded font notices are in `site/assets/ASSET-NOTICES.txt`; Font Awesome's OFL is included separately. Brand artwork and proprietary fonts retain their existing rights; this repository grants no new licence to those assets.
+
+Keyboard focus, accessible icon labels, a skip link and zoom support are retained. Colours deliberately match the requested reference, including its low-contrast gold/white buttons and gold navigation icons; this is not a full WCAG conformance claim. No original executable scripts, analytics IDs, product catalogue or customer data are copied.

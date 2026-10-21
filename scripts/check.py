@@ -74,9 +74,10 @@ expected = "noindex, follow" if args.preview else "index, follow"
 check(meta.get("robots") == expected, f"Homepage robots should be {expected}")
 check(110 <= len(meta.get("description", "")) <= 165, "Meta description length")
 check(meta.get("og:url") == "https://chaimsbooks.com/", "Open Graph URL")
-check(meta.get("og:image") == "https://chaimsbooks.com/assets/social-card.png", "Social image URL")
+check(meta.get("og:image") == "https://chaimsbooks.com/assets/bar-mitzvah-list-logo.png", "Social image URL")
 check(any(a.get("rel") == "canonical" and a.get("href") == "https://chaimsbooks.com/" for a in home.matching("link")), "Canonical URL")
-check("Chaims Books | Seforim, Jewish Books &amp; Judaica" in source, "Page title")
+check("<title>The Bar Mitzvah List | Personalised Bar Mitzvah Gift Lists</title>" in source, "Reference page title")
+check("Chaims Books" in meta.get("description", ""), "Business name in search description")
 check("Disallow: /" not in (root / "robots.txt").read_text(), "Crawler must be able to discover noindex or index content")
 if args.preview:
     check(not (root / "sitemap.xml").exists(), "Preview sitemap must be omitted")
